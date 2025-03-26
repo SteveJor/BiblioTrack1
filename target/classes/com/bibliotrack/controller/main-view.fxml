@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+
+<VBox xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.bibliotrack.controller.MainController">
+  <padding>
+    <Insets top="10" right="10" bottom="10" left="10"/>
+  </padding>
+
+  <HBox spacing="10" alignment="CENTER_LEFT">
+    <Label text="Statut de connexion:" style="-fx-font-weight: bold;"/>
+    <Label fx:id="connectionStatus" text="Non connecté"/>
+  </HBox>
+
+  <TabPane fx:id="mainTabPane" tabClosingPolicy="UNAVAILABLE">
+    <tabs>
+      <Tab fx:id="livresTab" text="Livres">
+        <content>
+          <TableView fx:id="livresTable">
+            <columns>
+              <TableColumn fx:id="isbnColumn" text="ISBN" minWidth="100"/>
+              <TableColumn fx:id="titreColumn" text="Titre" minWidth="200"/>
+              <TableColumn fx:id="auteurColumn" text="Auteur" minWidth="150"/>
+            </columns>
+          </TableView>
+        </content>
+      </Tab>
+
+      <Tab fx:id="exemplairesTab" text="Exemplaires">
+        <content>
+          <TableView fx:id="exemplairesTable">
+            <columns>
+              <TableColumn fx:id="numExemplaireColumn" text="Numéro" minWidth="80"/>
+              <TableColumn fx:id="etatColumn" text="État" minWidth="100"/>
+              <TableColumn fx:id="disponibleColumn" text="Disponible" minWidth="80"/>
+              <TableColumn fx:id="livreColumn" text="Livre" minWidth="250"/>
+            </columns>
+          </TableView>
+        </content>
+      </Tab>
+    </tabs>
+  </TabPane>
+</VBox>

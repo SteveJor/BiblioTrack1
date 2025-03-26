@@ -13,5 +13,6 @@ module com.bibliotrack.controller {
     requires java.sql;
 
     opens com.bibliotrack.controller to javafx.fxml;
+    opens com.bibliotrack.model to javafx.base;
     exports com.bibliotrack.controller;
 }
